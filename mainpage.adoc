@@ -1,0 +1,25 @@
+= Title
+//Header cannot contain spaces. Or it ends the header
+:author: Francis Sabado
+:email: fsabado@uark.edu
+:orgname: University of Arkansas
+//Set attributes on links
+:linkattrs:
+//These attributes are best defined inside the document.
+//:description:
+//:keywords:
+//:revdate:
+//:revremark:
+//:revnumber:
+:toc: left
+//Formatting
+:doctype: article
+//Enable Experimental features
+:experimental:
+//Uncomment to embed images
+//:data-uri:
+
+Document generated with Asciidoctor {asciidoctor-version}.
+//Settings
+
+include::settings/settings.adoc[]

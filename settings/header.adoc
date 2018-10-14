@@ -1,3 +1,4 @@
+
 = Title
 //Header cannot contain spaces. Or it ends the header
 :author: Francis Sabado
@@ -20,3 +21,4 @@
 :toc: left
 
 Document generated with Asciidoctor {asciidoctor-version}.
+
