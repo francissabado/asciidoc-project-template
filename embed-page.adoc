@@ -1,0 +1,39 @@
+
+////
+Requires the following variables to be set
+:source:
+:height:
+Set the height to be large enough to fit the page to prevent the scroll bar.
+
+Usage:
+
+:source: "hello.html"
+:height: 600
+//include::embed-page.adoc[]
+////
+
+[subs=attributes]
+++++
+<div id="content">
+    <iframe id="full-page"
+    width="100%" frameborder="0" wmode="transparent"
+    scrolling="no" 
+	src="{source}"
+    height="{height}" 
+	>
+    </iframe>
+</div>
+++++
+
+////Latest Versions
+++++
+<div id="content">
+    <iframe id="full-page"
+    width="100%" frameborder="0" wmode="transparent"
+    scrolling="no" 
+	src="focus_right_things.html"
+    height="5000" 
+	>
+    </iframe>
+</div>
+++++

@@ -1,0 +1,133 @@
+
+= Tips and Tricks
+
+== How to embed an HTML page?
+
+//Notes: Make sure to set the height large enough to fit full page.
+
+////
+You can use the subs attribute to specify a comma-separated list of substitutions.
+These substitutions will be applied to the content prior to it being reintroduced to the output document.
+////
+
+.How to embed an HTML page?
+[source,asciidoc]
+----
+include::embed-page.adoc[]
+----
+
+
+== How to keep a centralized adoc files and keep relative paths?
+
+[source,asciidoc]
+----
+//Windows
+:adocHome: D:/AsciiDoc
+
+//Linux
+:adocHome: /AsciiDoc
+
+////
+We will create a central document.
+Then use {ankiHome} to then refer to them.
+////
+----
+
+http://discuss.asciidoctor.org/Including-a-file-using-an-absolute-path-under-Windows-1-5-0-td2244.html[Source]
+
+
+== How do document attributes with style?
+
+[source,asciidoc]
+----
+= Attributes with styles
+// Include contents of docinfo.html
+// in HTML head with CSS style
+// definitions for .label.added,
+// .label.changed and .label.updated
+// used in the document attributes
+// cl-added, cl-changed and cl-updated.
+:docinfo1:
+// Document attribues with styling,
+// using the passthrough macro
+// and quotes subsitution.
+// We can use quotes or the short-hand q.
+:cl-added: pass:quotes[[.label.added]#Added:#]
+:cl-changed: pass:q[[.label.changed]#Changed:#]
+:cl-updated: pass:q[[.label.updated]#Updated:#]
+== Sample section
+* {cl-added} Document attributes for document.
+* {cl-changed} Definition of attributes to include
+ more options.
+* {cl-updated} New version of Asciidoctor.
+----
+
+Notice we need a file docinfo.html with the CSS style definitions:
+
+.docinfo.html
+[source,asciidoc]
+----
+<style>
+.label {
+    color: #fff;
+    padding: .2em .6em .3em;
+    font-weight: 700;
+    border-radius: .25em;
+    font-size: 90%;
+}
+.added {background-color: #007700;}
+.changed {background-color: #088;}
+.updated {background-color: #3344bb;}
+</style>
+----
+
+When we run Asciidoctor to get HTML output we see the following:
+
+image::images\tips-and-tricks-b0517.png[]
+
+
+https://dzone.com/articles/awesome-asciidoctor-document-attributes-with-styli[Source]
+
+
+== Substitute Attribute in Listing Block
+
+To write a listing block where the contents of the block is generated in a monospace font and line breaks are preserved is easy with Asciidoc.
+We can use ---- or [listing] or indent the paragraph with one space to define a listing block.
+All content in a listing block is processed as is, but special characters and callouts are processed.
+This means if we have an attribute in our block the attribute is not substituted with the actual value.
+To enable the replacement of the attribute with the attribute value we must set the subs attribute for our listing block.
+
+Suppose we have the following listing block in our documentation with the attribute grailsVersion in the content:
+
+++++
+:grailsVersion: 2.3.8
+
+----
+$ grails -version
+Grails version: {grailsVersion}
+----
+When we generate HTML output we get the following result:
+
+
+We add now the subs attribute to our listing:
+
+:grailsVersion: 2.3.8
+
+[subs="attributes"]
+----
+$ grails -version
+Grails version: {grailsVersion}
+----
+The generated HTML now shows that the attribute value is used:
+
+
+Alternative ways to define the listing block with the subs attribute. These will render the same result:
+
+[listing,subs="attributes"]
+$ grails -version
+Grails version: {grailsVersion}
+
+[subs="attributes"]
+ $ grails -version
+ Grails version: {grailsVersion}
+++++

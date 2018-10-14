@@ -1,0 +1,12 @@
+
+:adocHome: D:/AsciiDoc
+
+include::{adocHome}/docinfo-default.html[]
+
+:source: ./mrhaki-adding-custom-content-to-head-footer.html
+:height: 2700
+include::{adocHome}/embed-page.adoc[]
+
+:source: ./mrhaki-changing-to-font-awesome.html
+:height: 1100
+include::{adocHome}/embed-page.adoc[]

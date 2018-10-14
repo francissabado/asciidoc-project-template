@@ -1,0 +1,8 @@
+
+= Single File
+
+https://chrome.google.com/webstore/detail/singlefile/mpiodijhokgodhhofbcjdecpffjipkle?hl=en[SingleFile Addon (Chrome)]
+
+== Demo 
+
+video::RdV8DBW5b0g[youtube]

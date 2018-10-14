@@ -1,0 +1,11 @@
+
+= Questions and Answer
+
+[qanda]
+Include macro not working using an attribute in the path.::
++
+If you are using absolute path, you must change your settings to accept absolute path.
++
+Go on the package settings, change "safe mode" and base directory option.
++
+https://github.com/asciidoctor/atom-asciidoc-preview/issues/189[Source]

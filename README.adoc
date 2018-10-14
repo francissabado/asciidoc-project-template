@@ -1,0 +1,80 @@
+
+:toc: left
+:allow-uri-read:
+:safe: unsafe
+:docinfo2:
+:adocHome: D:/AsciiDoc
+
+include::{adocHome}/docinfo-default.html[]
+
+= Guide to AsciiDoc
+
+:sectnums:
+
+== Guides
+
+=== Evernote Guides
+
+Check your evernote for complete guides.
+The web clipper is very useful for saving old information.
+
+:alternote: https://chrome.google.com/webstore/detail/alternote-editor/hljkfahiahjhhpmpihngnommookkneji?hl=en-US
+
+. Clip the note to evernote.
+. Go to Evernote web to find the clipped webpage.
+. Modify page to your liking.
+. Use {alternote}[AlterNote] to modify note.
+. Go to <Source Code> on {alternote}[AlterNote] to via html source code.
+. Copy and page the page.
+
+//Awesome AsciiDoc
+//https://github.com/bodiam/awesome-asciidoc[Awesome Asciidoc]
+include::https://raw.githubusercontent.com/bodiam/awesome-asciidoc/master/README.adoc[leveloffset=+2]
+
+=== 10 Useful Asciidoctor Tips
+
+https://www.slideshare.net/aalmiray/devoxx-asciidoctor-tips[]
+
+//AsciiDoc Recommended Practices
+include::https://raw.githubusercontent.com/asciidoctor/asciidoctor.org/master/docs/asciidoc-recommended-practices.adoc[leveloffset=+2]
+
+
+=== Source Code
+
+https://github.com/highlightjs/highlight.js/tree/master/src/styles[Complete List of Highlight.js]
+
+
+=== Extensions
+
+:extensions-github: https://github.com/asciidoctor/asciidoctor-extensions-lab
+
+:macro-creation: https://markhneedham.com/blog/2018/02/19/asciidoctor-creating-macro/
+
+{extensions-github}[Extensions Github Page]
+
+{macro-creation}[Creating Macro Guide]
+
+
+
+== Problems and Solutions
+
+=== AsciiDoc.js Live Preview
+
+[qanda]
+The include command doesn't work::
+
+The default setting which is "Safe" takes some precautions and disables some features.
+To enable all the features, change the settings from the default "Safe" to "Unsafe". +
+Possible Setting: +
+UNSAFE | SAFE | SERVER | SECURE +
+Reference: https://asciidoctor.org/docs/user-manual/#running-asciidoctor-securely
+
+Where can I get more syntax highlighting settings?::
+
+You can use Prism. Prism is a lightweight extensible syntax highlighter, build with modern web standards in mind.
+It's used in thousands of website, including some of those you visit daily. +
+Reference: https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript
+
+How do I `allow-uri-read` from the Asciidoc.js live preview?::
+
+Go to Asciidoctor.js live preview settings. On the `Custom attributes` section, add `allow-uri-read` and set the "Safe mode" anything before `Server`.

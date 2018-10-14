@@ -1,0 +1,19 @@
+
+:experimental:
+
+
+= Chrome Developer Tools: Edit the DOM
+
+kbd:[Ctrl + Shift + c]
+
+++++
+<div id="content">
+    <iframe id="full-page"
+    width="100%" frameborder="0" wmode="transparent"
+	src="edit_developer_chrome.html"
+    height="1000" 
+	>
+    </iframe>
+</div>
+++++
+
