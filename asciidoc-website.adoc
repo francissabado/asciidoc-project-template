@@ -1,0 +1,111 @@
+
+= AsciiDoc Website
+
+I have an old web site running on top of MediaWiki. I never used the
+collaboration aspect of the wiki, I only wanted the simple markup experience
+and little else. As you'll probably imagine, I am considering migrating it all
+to AsciiDoctor.
+
+I know stuff like Gollum, Middleman or Awestruct exist, but after trying some
+of them, or just reading the workflow they impose, I didn't like them much. I
+understand that for having a sitemap, an RSS/Atom feed for news/blog, etc.,
+you are likely going to need a lot of manual work if you don't use a site
+generator, but still I don't see much value in them.
+
+I'd like to have your input on this, though. AsciiDoctor alone has some nice
+features to customize adding content to the footer, where I could add some
+HTML to have a shared side bar on all pages, etc. Or I could just post process
+the output with an AsciiDoctor plugin, or after the HTML is in disk using
+Nokogiri or similar.
+
+
+First, if you're interested in a blogging platform, Hubpress (https://github.com/HubPress/hubpress.io) gives you the ability to write your blog in Asciidoc syntax (it uses Asciidoctor under the covers) and host on Github.  I haven't used Hubpress much, but I've heard that it's a breeze.
+
+Second, if you're looking for more of a website we have the JAQ (https://github.com/asciidoctor/jekyll-asciidoc-quickstart) project that gives you a leg-up in developing a site centered around Asciidoc content.  JAQ uses the Jekyll-asciidoc ruby library to leverage github pages and Travis to automatically process and host your content.  This means you can edit your Asciidoc content on Github directly and the infrastructure will process and deploy your website.  I use this on my project websites:  http://parceler.org and http://androidtransfuse.org ... here's the source for each respecitively: https://github.com/johncarl81/parceler-site and https://github.com/johncarl81/transfuse-site .
+
+I've also seen websites based on Awestruct (I believe the asciidoctor.org website is) but I haven't focused on it as a solution.
+
+
+
+
+Have a look at https://github.com/RobWin/asciidocular.
+I created it some days ago and its still a prerelease Version. Asciidocular is a small AngularJS web app that loads AsciiDoctor files via Ajax and renders them as a full web site. Asciidocular uses asciidoctor.js to convert the AsciiDoc files into HTML. Asciidocular can be used to create a documentation site of your project or API.
+
+Advantages:
+
+No server-side components like nodejs, Ruby or Java needed.
+
+No build process and tools needed to convert your AsciiDoc files into HTML
+
+Deployable via GitHub Pages
+
+Responsive Bootswatch (Bootstrap) theme
+
+Just create AsciiDoc files and deploy!
+
+
+https://github.com/nerk/asciidoctor-bs-themes
+
+
+Early today I discovered (or perhaps rediscovered) adocsite, which appears to be a minimal script around Asciidoctor to handle the concern Ted pointed out...just being able to run Asciidoctor on a bunch of files.
+
+https://github.com/myblueraven/adocsite
+
+I haven't tried it, just pointing it out for further exploration.
+
+
+Welcome!
+
+Keep in mind asciidoctor ecosystem is build on layers. Asciidoctor itself is focused on single-document rendering and leaves to other the fancy stuff like: index generation, multiple file conversion, HTML embedding, styling, etc.
+
+* If you want a quick way to build a documentation repository, Antora is the way to go. Not only does the job mentioned above but enforces some really good practices in how to organise your docs and resources.
+
+* If you want to build a customized static site, you can check how the asciidoctor and antora's sites are build:
+- https://github.com/asciidoctor/asciidoctor.org
+- https://gitlab.com/antora/antora.org
+This will require some HTML/CSS work, but is not hard. I myself use this for my current project site :) Just used the antora site as a template, changed the CSS and reorganised a few things in a few days.
+
+* If you are thinking about a blogging platform, you can check things like jbake, jekyll or https://github.com/HubPress/hubpress.io.
+
+Also, i found some old posts in the forum, maybe they help: http://discuss.asciidoctor.org/Use-AsciiDoctor-only-for-a-simple-website-td3681.html.
+btw, this is not a RTFM :)  I am aware the forum is not easy to search. 
+
+
+http://discuss.asciidoctor.org/Building-websites-with-Asciidoctor-td6461.html[]
+
+== Antora Project
+
+The multi-repository documentation site generator for tech writers who  writing in AsciiDoc.
+
+https://gitlab.com/antora/antora.org[]
+
+== Awestruct
+
+Awestruct is a framework for creating static HTML sites, inspired by the Jekyll utility in the same genre.
+
+Awestruct makes it trivially easy to create non-trivial static websites using lightweight markup languages such as AsciiDoc, Markdown, and Textile, templating languages such as Slim, Haml, and Compass (Sass), as well as UI frameworks like Bootstrap and Zurb Foundation.
+
+The core concept of Awestruct is that of structures, specifically Ruby "OpenStruct" structures. The struct aspect allows arbitrary, schema-less data to be associated with a specific page or the entire site.
+
+Site-specific data is automatically loaded from simple YAML files, while data can be provided on pages using a front-matter prolog.
+
+http://awestruct.org/[]
+
+== AsciiDoctor Project Site
+
+https://github.com/asciidoctor/asciidoctor.org[]
+
+== Website Hosting
+
+Build, deploy, and manage
+modern web projects
+An all-in-one workflow that combines global deployment, continuous integration, and automatic HTTPS.
+And that’s just the beginning.
+(Free for personal users)
+
+https://www.netlify.com/pricing/#features[]
+
+[bibliography]
+== References
+
+* [[[a1,1]]] http://discuss.asciidoctor.org/Use-AsciiDoctor-only-for-a-simple-website-td3681.html[]
